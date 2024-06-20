@@ -1,187 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bollywood Music Quiz</title>
-    <style>
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background: url('bollywood.jpg') no-repeat center center fixed;
-            background-size: cover; /* Cover the entire viewport */
-            color: #333;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bollywood Music Quiz</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+				background: url("bollywood.jpg") no-repeat center center fixed;
+				background-size: cover;
+				color: #333;
+			}
 
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for container */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+			.container {
+				text-align: center;
+				background-color: rgba(255, 255, 255, 0.8);
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
+			h1 {
+				font-size: 2.5rem;
+				margin-bottom: 20px;
+				color: #333;
+			}
 
-        .audio {
-            margin-bottom: 20px;
-        }
+			.audio {
+				margin-bottom: 20px;
+			}
 
-        .audio-btn, button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+			.audio-btn,
+			button {
+				background-color: #007bff;
+				color: #fff;
+				border: none;
+				padding: 10px 20px;
+				font-size: 1rem;
+				cursor: pointer;
+				border-radius: 4px;
+				transition: background-color 0.3s ease;
+			}
 
-        .audio-btn:hover, button:hover {
-            background-color: #0056b3;
-        }
+			.audio-btn:hover,
+			button:hover {
+				background-color: #0056b3;
+			}
 
-        input[type="text"], button {
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-right: 10px;
-            width: 200px;
-        }
+			input[type="text"],
+			button {
+				padding: 10px;
+				font-size: 1rem;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-right: 10px;
+				width: 200px;
+			}
 
-        input[type="text"] {
-            width: 250px;
-        }
+			input[type="text"] {
+				width: 250px;
+			}
 
-        #points {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>BOLLYWOOD MUSIC QUIZ</h1>
-        <div class="audio">
-            <button class="audio-btn" onclick="playRandomAudio()">
-                Play Random Audio
-            </button>
-            <button onclick="stopAudio()">Stop</button> <!-- New stop button -->
-            <br /><br />
-            <input type="text" id="userInput" placeholder="Enter here" />
-            <button onclick="checkInput()">Submit</button>
-            <p id="points">You scored 0 points!</p>
-        </div>
-    </div>
-    <audio id="audio1">
-        <source src="Fear Song Devara Part 1 Hindi 320 Kbps.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio2">
-        <source src="Bhairava Anthem Kalki 2898 Ad 320 Kbps.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio3">
-        <source src="Pehle Bhi Main Animal 320 Kbps.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio4">
-        <source src="Chaleya Jawan 320 Kbps.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio5">
-        <source src="Jhoome Jo Pathaan Title Song 320 Kbps.mp3" type="audio/mpeg">
-    </audio>
+			#points {
+				font-size: 1.2rem;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>BOLLYWOOD MUSIC QUIZ</h1>
+			<div class="audio">
+				<button class="audio-btn" onclick="playRandomAudio()">
+					Play Random Audio
+				</button>
+				<button onclick="stopAudio()">Stop</button>
+				<br /><br />
+				<input type="text" id="userInput" placeholder="Enter here" />
+				<button onclick="checkInput()">Submit</button>
+				<p id="points">You scored 0 points!</p>
+			</div>
+		</div>
+		<audio id="audio1">
+			<source
+				src="Fear Song Devara Part 1 Hindi 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+		<audio id="audio2">
+			<source
+				src="Bhairava Anthem Kalki 2898 Ad 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+		<audio id="audio3">
+			<source src="Pehle Bhi Main Animal 320 Kbps.mp3" type="audio/mpeg" />
+		</audio>
+		<audio id="audio4">
+			<source src="Chaleya Jawan 320 Kbps.mp3" type="audio/mpeg" />
+		</audio>
+		<audio id="audio5">
+			<source
+				src="Jhoome Jo Pathaan Title Song 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
 
-    <script>
-        let count = 0;
-        let audioElements = [
-            { audio: document.getElementById("audio1"), answer: "devara", played: false },
-            { audio: document.getElementById("audio2"), answer: "kalki", played: false },
-            { audio: document.getElementById("audio3"), answer: "animal", played: false },
-            { audio: document.getElementById("audio4"), answer: "jawan", played: false },
-            { audio: document.getElementById("audio5"), answer: "pathaan", played: false }
-        ];
-        let lastPlayedIndex = -1;
-        let playedAudios = [];
-        let currentAudio = null; // Variable to store the currently playing audio element
+		<script>
+			let count = 0;
+			let audioElements = [
+				{
+					audio: document.getElementById("audio1"),
+					answer: "devara",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio2"),
+					answer: "kalki",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio3"),
+					answer: "animal",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio4"),
+					answer: "jawan",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio5"),
+					answer: "pathaan",
+					played: false,
+				},
+			];
+			let lastPlayedIndex = -1;
+			let playedAudios = [];
+			let currentAudio = null;
 
-        function playRandomAudio() {
-            try {
-                let availableAudios = audioElements.filter(audio => !audio.played);
-                
-                if (availableAudios.length === 0) {
-                    // Reset all audios to unplayed if all have been played
-                    audioElements.forEach(audio => audio.played = false);
-                    availableAudios = audioElements;
-                }
-                
-                let randomIndex = Math.floor(Math.random() * availableAudios.length);
-                let selectedAudio = availableAudios[randomIndex];
-                
-                // Pause all audio before playing a new one
-                pauseAllAudio();
-                
-                // Play the selected audio
-                selectedAudio.audio.currentTime = 0; // Restart if already playing
-                selectedAudio.audio.play();
-                
-                // Update lastPlayedIndex and mark as played
-                lastPlayedIndex = audioElements.indexOf(selectedAudio);
-                selectedAudio.played = true;
+			function playRandomAudio() {
+				try {
+					let availableAudios = audioElements.filter((audio) => !audio.played);
 
-                // Update currentAudio to the selected audio element
-                currentAudio = selectedAudio.audio;
-                
-                console.log(`Playing audio at index: ${lastPlayedIndex}`);
-            } catch (error) {
-                console.error("Error playing audio:", error);
-            }
-        }
+					if (availableAudios.length === 0) {
+						audioElements.forEach((audio) => (audio.played = false));
+						availableAudios = audioElements;
+					}
 
-        function stopAudio() {
-            if (currentAudio) {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-            }
-        }
+					let randomIndex = Math.floor(Math.random() * availableAudios.length);
+					let selectedAudio = availableAudios[randomIndex];
 
-        function pauseAllAudio() {
-            audioElements.forEach((audio) => {
-                audio.audio.pause();
-            });
-        }
+					pauseAllAudio();
 
-        function checkInput() {
-            let answer = document
-                .getElementById("userInput")
-                .value.trim()
-                .toLowerCase();
-            if (
-                lastPlayedIndex !== -1 &&
-                answer === audioElements[lastPlayedIndex].answer
-            ) {
-                count += 1;
-                updatePoints(count);
-                playRandomAudio(); // Play a new random audio after correct answer
-            } else {
-                updatePoints(count); // Update points even if answer is incorrect
-            }
-            document.getElementById("userInput").value = ""; // Clear the input field
-        }
+					selectedAudio.audio.currentTime = 0;
+					selectedAudio.audio.play();
 
-        function updatePoints(count) {
-            document.getElementById(
-                "points"
-            ).textContent = `You scored ${count} points!`;
-        }
-    </script>
-</body>
+					lastPlayedIndex = audioElements.indexOf(selectedAudio);
+					selectedAudio.played = true;
+
+					currentAudio = selectedAudio.audio;
+
+					console.log(`Playing audio at index: ${lastPlayedIndex}`);
+				} catch (error) {
+					console.error("Error playing audio:", error);
+				}
+			}
+
+			function stopAudio() {
+				if (currentAudio) {
+					currentAudio.pause();
+					currentAudio.currentTime = 0;
+				}
+			}
+
+			function pauseAllAudio() {
+				audioElements.forEach((audio) => {
+					audio.audio.pause();
+				});
+			}
+
+			function checkInput() {
+				let answer = document
+					.getElementById("userInput")
+					.value.trim()
+					.toLowerCase();
+				if (
+					lastPlayedIndex !== -1 &&
+					answer === audioElements[lastPlayedIndex].answer
+				) {
+					count += 1;
+					updatePoints(count);
+					playRandomAudio();
+				} else {
+					updatePoints(count);
+				}
+				document.getElementById("userInput").value = "";
+			}
+
+			function updatePoints(count) {
+				document.getElementById(
+					"points"
+				).textContent = `You scored ${count} points!`;
+			}
+		</script>
+	</body>
 </html>
