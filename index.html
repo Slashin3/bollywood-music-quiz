@@ -3,6 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="Permissions-Policy"
+			content="geolocation=(self 'https://slashin3.github.io/bollywood-70s-music/'), microphone=(), camera=()"
+		/>
 		<title>Bollywood Music Quiz</title>
 		<style>
 			body {
@@ -70,11 +74,18 @@
 				font-size: 1.2rem;
 				margin-top: 10px;
 			}
+
+			video {
+				display: none;
+				width: 100%;
+				max-width: 600px;
+				margin-top: 20px;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<h1>BOLLYWOOD MUSIC QUIZ</h1>
+			<h1>BOLLYWOOD 70's MUSIC QUIZ</h1>
 			<div class="audio">
 				<button class="audio-btn" onclick="playRandomAudio()">Play</button>
 				<button onclick="stopAudio()">Stop</button>
@@ -83,34 +94,135 @@
 				<button onclick="checkInput()">Submit</button>
 				<p id="points">You scored 0 points!</p>
 			</div>
+			<video id="video1">
+				<source
+					src="Chura Liya Hai Tumne Jo Dil Ko (( 4K Video )) _ Yaadon Ki Baaraat _ Zeenat A _ Asha B, Mohammed Rafi.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video2">
+				<source
+					src="O MERE DIL KE CHAIN - Rajesh Khanna-Kishore Kumar Romantic Song - Tanuja - Mere Jeevan Saathi Songs.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video3">
+				<source
+					src="आपकी आँखों में कुछ 4K Song_ Ghar _ Kishore K, Lata Mangeshkar _ R D Burman Hits _ Vinod Mehra, Rekha.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video4">
+				<source
+					src="Ek Ajnabee Haseena Se _ 4K Video _ Ajanabee _ Rajesh Khanna, Zeenat Aman _ Kishore Kumar _ 90s Hits.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video5">
+				<source
+					src="Tere Chehre Se Full Song _ Kabhi Kabhie _ Rishi Kapoor, Neetu Singh _ Kishore Kumar, Lata Mangeshkar.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video6">
+				<source
+					src="Do Lafzon Ki Hai Dil Ki Kahani - Amitabh - Zeenat Aman - The Great Gambler - Old Hindi Songs.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video7">
+				<source
+					src="Pyar Deewana Hota Hai 4K Song _ Kishore Kumar Classics _ Rajesh Khanna _ Hindi Romantic-Kati Patang.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video8">
+				<source
+					src="Rajesh Khanna aur Zeenat Aman _ Bheegi Bheegi Raaton Mein (4K) Kishore Kumar-Lata Mangeshkar s Songs.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video9">
+				<source
+					src="Aaj Mausam Bada Beimaan Hai - Dharmendra, Mohammed Rafi, Loafer Song.mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<video id="video10">
+				<source
+					src="Chaand Mera Dil - HD _ MOHD RAFI _ Hum Kisise Kum Naheen (1977).mp4"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
 		</div>
+
 		<audio id="audio1">
 			<source
-				src="Fear Song Devara Part 1 Hindi 320 Kbps.mp3"
+				src="Chura Liya Hai Tumne Jo Dil Ko - Yaadon Ki Baaraat 320 Kbps.mp3"
 				type="audio/mpeg"
 			/>
 		</audio>
 		<audio id="audio2">
 			<source
-				src="Bhairava Anthem Kalki 2898 Ad 320 Kbps.mp3"
+				src="O Mere Dil Ke Chain - Mere Jeevan Saathi 320 Kbps.mp3"
 				type="audio/mpeg"
 			/>
 		</audio>
 		<audio id="audio3">
-			<source src="Pehle Bhi Main Animal 320 Kbps.mp3" type="audio/mpeg" />
+			<source
+				src="Aap Ki Ankhon Mein Kuch - Ghar 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
 		</audio>
 		<audio id="audio4">
-			<source src="Chaleya Jawan 320 Kbps.mp3" type="audio/mpeg" />
+			<source
+				src="Ek Ajnabee Haseena Se - Ajanabee 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
 		</audio>
 		<audio id="audio5">
 			<source
-				src="Jhoome Jo Pathaan Title Song 320 Kbps.mp3"
+				src="Tere Chehre Se Nazar Nahin - Kabhi Kabhie 320 Kbps.mp3"
 				type="audio/mpeg"
 			/>
 		</audio>
 		<audio id="audio6">
 			<source
-				src="Apna Time Aayega Gully Boy 320 Kbps.mp3"
+				src="Do Lafzon Ki Hai Dil Ki Kahani - The Great Gambler 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+		<audio id="audio7">
+			<source
+				src="Pyar Diwana Hota Hai - Kati Patang 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+		<audio id="audio8">
+			<source
+				src="Bheegi Bheegi Raaton Mein - Ajanabee 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+		<audio id="audio9">
+			<source
+				src="Aaj Mausam Bada Beimaan Hai - Loafer 1973 320 Kbps.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+		<audio id="audio10">
+			<source
+				src="Chand Mera Dil Chandni Ho Tum Medley - Hum Kisise Kum Naheen 320 Kbps.mp3"
 				type="audio/mpeg"
 			/>
 		</audio>
@@ -120,37 +232,56 @@
 			let audioElements = [
 				{
 					audio: document.getElementById("audio1"),
-					answer: "devara",
+					answer: "yaadon ki baaraat",
 					played: false,
 				},
 				{
 					audio: document.getElementById("audio2"),
-					answer: "kalki",
+					answer: "mere jeevan saathi",
 					played: false,
 				},
 				{
 					audio: document.getElementById("audio3"),
-					answer: "animal",
+					answer: "ghar",
 					played: false,
 				},
 				{
 					audio: document.getElementById("audio4"),
-					answer: "jawan",
+					answer: "ajanabee",
 					played: false,
 				},
 				{
 					audio: document.getElementById("audio5"),
-					answer: "pathaan",
+					answer: "kabhie kabhie",
 					played: false,
 				},
 				{
 					audio: document.getElementById("audio6"),
-					answer: "gullyboy",
+					answer: "the great gambler",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio7"),
+					answer: "kati patang",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio8"),
+					answer: "ajanabee",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio9"),
+					answer: "loafer",
+					played: false,
+				},
+				{
+					audio: document.getElementById("audio10"),
+					answer: "Hum Kisise Kum Naheen",
 					played: false,
 				},
 			];
 			let lastPlayedIndex = -1;
-			let playedAudios = [];
 			let currentAudio = null;
 
 			function playRandomAudio() {
@@ -165,7 +296,7 @@
 					let randomIndex = Math.floor(Math.random() * availableAudios.length);
 					let selectedAudio = availableAudios[randomIndex];
 
-					pauseAllAudio();
+					stopAudio(); // Ensure any previous audio is stopped
 
 					selectedAudio.audio.currentTime = 0;
 					selectedAudio.audio.play();
@@ -182,10 +313,23 @@
 			}
 
 			function stopAudio() {
+				// Pause current audio
 				if (currentAudio) {
 					currentAudio.pause();
 					currentAudio.currentTime = 0;
 				}
+
+				// Stop current video
+				pauseAllVideos();
+			}
+
+			function pauseAllVideos() {
+				// Pause all videos and reset to initial state
+				document.querySelectorAll("video").forEach((video) => {
+					video.pause();
+					video.currentTime = 0;
+					video.style.display = "none";
+				});
 			}
 
 			function pauseAllAudio() {
@@ -195,20 +339,68 @@
 			}
 
 			function checkInput() {
-				let answer = document
+				// let answer = document
+				// 	.getElementById("userInput")
+				// 	.value.trim()
+				// 	.toLowerCase();
+				// let correctAnswer = audioElements[lastPlayedIndex].answer;
+				let userInput = document
 					.getElementById("userInput")
 					.value.trim()
 					.toLowerCase();
-				if (
-					lastPlayedIndex !== -1 &&
-					answer === audioElements[lastPlayedIndex].answer
-				) {
+				let correctAnswer = audioElements[lastPlayedIndex].answer.toLowerCase();
+
+				// Remove non-alphanumeric characters and extra spaces
+				userInput = userInput.replace(/[^a-zA-Z0-9]/g, "");
+				correctAnswer = correctAnswer.replace(/[^a-zA-Z0-9]/g, "");
+
+				if (userInput === correctAnswer) {
 					count += 1;
 					updatePoints(count);
-					playRandomAudio();
+
+					// Stop current audio before playing the video
+					stopAudio();
+
+					// Determine which video to play based on the audio that was last played
+					switch (lastPlayedIndex) {
+						case 0:
+							playVideoClip(1);
+							break;
+						case 1:
+							playVideoClip(2);
+							break;
+						case 2:
+							playVideoClip(3);
+							break;
+						case 3:
+							playVideoClip(4);
+							break;
+						case 4:
+							playVideoClip(5);
+							break;
+						case 5:
+							playVideoClip(6);
+							break;
+						case 6:
+							playVideoClip(7);
+							break;
+						case 7:
+							playVideoClip(8);
+							break;
+						case 8:
+							playVideoClip(9);
+							break;
+						case 9:
+							playVideoClip(10);
+							break;
+						default:
+							playRandomAudio();
+							break;
+					}
 				} else {
 					updatePoints(count);
 				}
+
 				document.getElementById("userInput").value = "";
 			}
 
@@ -216,6 +408,34 @@
 				document.getElementById(
 					"points"
 				).textContent = `You scored ${count} points!`;
+			}
+
+			function playVideoClip(videoNumber) {
+				const video = document.getElementById(`video${videoNumber}`);
+
+				// Stop any currently playing video (if any)
+				pauseAllVideos();
+
+				// Play the selected video
+				video.style.display = "block";
+				video.currentTime = 35; // Start video from the beginning
+				video.play();
+
+				// Automatically hide video after 5 seconds (5000 ms)
+				setTimeout(() => {
+					video.pause();
+					video.style.display = "none";
+
+					// Continue with next random audio
+					playRandomAudio();
+				}, 10000); // Adjust duration as needed
+			}
+
+			function pauseAllVideos() {
+				document.querySelectorAll("video").forEach((video) => {
+					video.pause();
+					video.style.display = "none";
+				});
 			}
 		</script>
 	</body>
